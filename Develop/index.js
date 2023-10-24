@@ -3,10 +3,12 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
 const generateMarkdown = require('./utils/generateMarkdown')
-
+const makeBadge = require('badge-maker')
+// import { makeBadge, ValidationError } from './package-lock-badge.json'
 // TODO: Create an array of questions for user input
 const questions = [
     {
+
     type: 'input',
     message: 'What is your name?',
     name: 'Name',
@@ -43,12 +45,6 @@ const questions = [
         name: 'Learn',
     },
     {
-
-        type: 'input',
-        message: 'What makes your project stand out?',
-        name: 'Description',
-    },
-    {
         type: 'input',
         message: 'What references did you use and/or collaborators on this project?',
         name: 'Credits',
@@ -56,9 +52,15 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What are the usage information?',
+        message: 'What is the usage information?',
         name: 'Usage',
     },
+    {
+        type: 'input',
+        message: 'How do you install this project?',
+        name: 'Install',
+    },
+
     {
         type: 'input',
         message: 'What are the contribution guidelines?',
@@ -74,7 +76,7 @@ const questions = [
         type: 'checkbox',
         name: 'License',
         message: 'What license would you like to use?',
-        choices:['MIT', 'Academic Free License v3.0', 'Artistic license 2.0', 'Boost Software License 1.0', 'The Unlicense']
+        choices:['MIT', 'Perl', 'PDDL']
     },
     {
         type: 'input',
@@ -100,6 +102,7 @@ function init() {
     inquirer.prompt(questions).then((responses) => {
         console.log("Creating Professional README.md File...");
         writeToFile("./completed/README.md", generateMarkdown({ ...responses }));
+
       });
 }
 

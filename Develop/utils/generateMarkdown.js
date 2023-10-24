@@ -1,17 +1,12 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  if (license !== "none"){
-    return `![Github license](https://img.shields.io/badge/license-$(license)=blueyellow.svg)`;
+function renderLicenseBadge(License) {
+  if (License !== "none") {
+    return `![Github license](https://img.shields.io/badge/license-${License}-blue.svg)`;
   }
+  return "";
 }
-// return "";
 
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-  if (license !== "none"){
+function renderLicenseLink(License) {
+  if (License !== "none") {
     return `[License](#license)`
   }
   return "";
@@ -19,51 +14,56 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
-  if (license !== "none"){
-    return `##License
-    
-    Licensed under ${license} license`;
+function renderLicenseSection(License) {
+  if (License !== "none") {
+    return `
+    Licensed under ${License}`;
   }
   return "";
 }
 
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# Title: ${data.Title}
   by ${data.Name}
-  ${renderLicenseBadge(data.license)}'
+  ${renderLicenseBadge(data.License)}
 
-##Table of Contents
+## Table of Contents
 * [Description](#Description)
+* [Installation](#Installation)
 * [Credits](#Credits)
 * [Usage](#Usage)
 * [Test instructions](#Test-Instructions)
-* [Questions](#Contact-Me)
+* [Questions](##Contact-Me)
 
-##Description
+## Description
 ${data.Description}\n
 ${data.Motivation}\n
 ${data.Why}\n
 ${data.Problem}\n
 ${data.Learn}\n
 
-##Additional Credits
+## Installation\n
+${data.Install}
+
+### Additional Credits\n
 ${data.Credits}
 
-##Usage Information
+### Usage Information\n
 ${data.Usage}
 
-##Test-instructions
+### Test-instructions
 ${data.Test}
 
-##Contribution guidelines
+### Contribution guidelines
 ${data.Contribution}
 
-##License
-This application is covered under ${renderLicenseLink()}
-##Contact me ${data.name}with addtional questions at: 
-${data.GitHub}(https://github.com/${data.GitHub}/)
+## License
+${renderLicenseLink()} 
+
+${renderLicenseSection()}
+
+## Contact-me: 
+(https://github.com/${data.GitHub}/)
 ${data.Email}
 `;
 
