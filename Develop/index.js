@@ -1,16 +1,14 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
 const generateMarkdown = require('./utils/generateMarkdown')
-const makeBadge = require('badge-maker')
-// import { makeBadge, ValidationError } from './package-lock-badge.json'
-// TODO: Create an array of questions for user input
+
+//Questions to prompt the user
 const questions = [
     {
 
     type: 'input',
-    message: 'What is your name?',
+    message: 'What is your full name?',
     name: 'Name',
     },
     {
@@ -21,22 +19,17 @@ const questions = [
 
     {
         type: 'input',
-        message: 'What is the description of your project?',
+        message: 'What is the description of your project? Provide as many details as possible.',
         name: 'Description',
     },
     {
         type: 'input',
-        message: 'What was your motivation?',
+        message: 'What was your motivation and why?',
         name: 'Motivation',
     },
     {
         type: 'input',
-        message: 'Why did you build this project?',
-        name: 'Why',
-    },
-    {
-        type: 'input',
-        message: 'What problem does it solve?',
+        message: 'What problem or problems does it solve?',
         name: 'Problem',
     },
     {
@@ -46,7 +39,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What references did you use and/or collaborators on this project?',
+        message: 'What references did you use and/or did you have any collaborators on this project?',
         name: 'Credits',
         default: '',
     },
@@ -92,12 +85,12 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
+//A function to write to the file
 function writeToFile(fileName, data) { 
     return fs.writeFileSync(path.join(__dirname, fileName), data);
 }
 
-// TODO: Create a function to initialize app
+// A function to initialize app
 function init() { 
     inquirer.prompt(questions).then((responses) => {
         console.log("Creating Professional README.md File...");

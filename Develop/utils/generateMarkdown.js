@@ -1,10 +1,11 @@
+//Render License Badge
 function renderLicenseBadge(License) {
   if (License !== "none") {
-    return `![Github license](https://img.shields.io/badge/license-${License}-blue.svg)`;
+    return `![Github license](https://img.shields.io/badge/license-${License}-purple.svg)`;
   }
   return "";
 }
-
+//Render License Link
 function renderLicenseLink(License) {
   if (License !== "none") {
     return `[License](#license)`
@@ -12,8 +13,7 @@ function renderLicenseLink(License) {
   return "";
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+//Render License
 function renderLicenseSection(License) {
   if (License !== "none") {
     return `
@@ -21,24 +21,23 @@ function renderLicenseSection(License) {
   }
   return "";
 }
-
+//Function to create markdown file
 function generateMarkdown(data) {
   return `# Title: ${data.Title}
   by ${data.Name}
   ${renderLicenseBadge(data.License)}
 
 ## Table of Contents
-* [Description](#Description)
-* [Installation](#Installation)
-* [Credits](#Credits)
-* [Usage](#Usage)
-* [Test instructions](#Test-Instructions)
-* [Questions](##Contact-Me)
+* [Description](#description)
+* [Installation](#installation)
+* [Credits](#additional-credits)
+* [Usage](#usage-information)
+* [Test instructions](#test-instructions)
+* [Questions](#contact)
 
-## Description
+### Description
 ${data.Description}\n
 ${data.Motivation}\n
-${data.Why}\n
 ${data.Problem}\n
 ${data.Learn}\n
 
@@ -51,20 +50,21 @@ ${data.Credits}
 ### Usage Information\n
 ${data.Usage}
 
-### Test-instructions
+### Test Instructions
 ${data.Test}
 
 ### Contribution guidelines
 ${data.Contribution}
 
-## License
+### License
 ${renderLicenseLink()} 
 
-${renderLicenseSection()}
+${renderLicenseSection(data.License)}
 
-## Contact-me: 
-(https://github.com/${data.GitHub}/)
-${data.Email}
+### Contact
+Github: (https://github.com/${data.GitHub}/)\n
+
+Email: ${data.Email}
 `;
 
 }
