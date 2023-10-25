@@ -49,3 +49,6 @@ Github: (https://github.com/Trinity16201/)
 
 
 Email: Trinity16201@gmail.com
+
+Video: 
+[Untitled_ Oct 24, 2023 10_31 PM.webm](https://github.com/Trinity16201/ReadMe-WriteUp/assets/142117870/f9096546-d412-42db-99d5-4eaf7fa83d57)
