@@ -93,7 +93,7 @@ function writeToFile(fileName, data) {
 // A function to initialize app
 function init() { 
     inquirer.prompt(questions).then((responses) => {
-        console.log("Creating Professional READMEFILE.md File...");
+        console.log("Creating Professional README.md File...");
         writeToFile("./completed/README.md", generateMarkdown({ ...responses }));
 
       });
