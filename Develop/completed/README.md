@@ -1,5 +1,5 @@
-# Title: n
-  by SL Onion
+# Title: ReadMe-WriteUp
+  by Sarah Leder
   ![Github license](https://img.shields.io/badge/license-MIT-purple.svg)
 
 ## Table of Contents
@@ -11,32 +11,32 @@
 * [Questions](#contact)
 
 ### Description
-n
+A local creation of a Readme file to add to any projects you are working on.
 
-n
+To learn more about nodeJS and gain a better understanding of creating ReadMeFiles.
 
-n
+Remembering all the details needed to create a professional ReadMe File.
 
-n
+I learned a lot more about generating files and how to work node.
 
 
 ## Installation
 
-n
+nmp install inquirer
 
 ### Additional Credits
 
-n
+I found some guidance on the Medium blog and some helpful youtube tutorials.
 
 ### Usage Information
 
-n
+None
 
 ### Test Instructions
-n
+Install node on your computer prior to completing this type of project.
 
 ### Contribution guidelines
-n
+Complete as much as possible
 
 ### License
 [License](#license) 
@@ -45,7 +45,7 @@ n
     Licensed under MIT
 
 ### Contact
-Github: (https://github.com/n/)
+Github: (https://github.com/Trinity16201/)
 
-Or
-Email: n
+
+Email: Trinity16201@gmail.com
